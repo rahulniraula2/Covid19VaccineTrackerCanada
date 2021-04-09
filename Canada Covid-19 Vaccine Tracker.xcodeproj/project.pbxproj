@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8983A962261FF9EC007CBFFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A961261FF9EC007CBFFF /* AppDelegate.swift */; };
+		8983A964261FF9EC007CBFFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A963261FF9EC007CBFFF /* SceneDelegate.swift */; };
+		8983A966261FF9EC007CBFFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A965261FF9EC007CBFFF /* ViewController.swift */; };
+		8983A969261FF9EC007CBFFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8983A967261FF9EC007CBFFF /* Main.storyboard */; };
+		8983A96B261FF9F0007CBFFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8983A96A261FF9F0007CBFFF /* Assets.xcassets */; };
+		8983A96E261FF9F0007CBFFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8983A96C261FF9F0007CBFFF /* LaunchScreen.storyboard */; };
+		8983A979261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A978261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift */; };
+		8983A984261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A983261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8983A975261FF9F1007CBFFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8983A956261FF9EC007CBFFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8983A95D261FF9EC007CBFFF;
+			remoteInfo = "Canada Covid-19 Vaccine Tracker";
+		};
+		8983A980261FF9F1007CBFFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8983A956261FF9EC007CBFFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8983A95D261FF9EC007CBFFF;
+			remoteInfo = "Canada Covid-19 Vaccine Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8983A95E261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Covid-19 Vaccine Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8983A961261FF9EC007CBFFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8983A963261FF9EC007CBFFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8983A965261FF9EC007CBFFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8983A968261FF9EC007CBFFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8983A96A261FF9F0007CBFFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8983A96D261FF9F0007CBFFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8983A96F261FF9F0007CBFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8983A974261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canada Covid-19 Vaccine TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8983A978261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canada_Covid_19_Vaccine_TrackerTests.swift; sourceTree = "<group>"; };
+		8983A97A261FF9F1007CBFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8983A97F261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canada Covid-19 Vaccine TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8983A983261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canada_Covid_19_Vaccine_TrackerUITests.swift; sourceTree = "<group>"; };
+		8983A985261FF9F1007CBFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8983A95B261FF9EC007CBFFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8983A971261FF9F1007CBFFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8983A97C261FF9F1007CBFFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8983A955261FF9EC007CBFFF = {
+			isa = PBXGroup;
+			children = (
+				8983A960261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */,
+				8983A977261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests */,
+				8983A982261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests */,
+				8983A95F261FF9EC007CBFFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8983A95F261FF9EC007CBFFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8983A95E261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker.app */,
+				8983A974261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests.xctest */,
+				8983A97F261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8983A960261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				8983A961261FF9EC007CBFFF /* AppDelegate.swift */,
+				8983A963261FF9EC007CBFFF /* SceneDelegate.swift */,
+				8983A965261FF9EC007CBFFF /* ViewController.swift */,
+				8983A967261FF9EC007CBFFF /* Main.storyboard */,
+				8983A96A261FF9F0007CBFFF /* Assets.xcassets */,
+				8983A96C261FF9F0007CBFFF /* LaunchScreen.storyboard */,
+				8983A96F261FF9F0007CBFFF /* Info.plist */,
+			);
+			path = "Canada Covid-19 Vaccine Tracker";
+			sourceTree = "<group>";
+		};
+		8983A977261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8983A978261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift */,
+				8983A97A261FF9F1007CBFFF /* Info.plist */,
+			);
+			path = "Canada Covid-19 Vaccine TrackerTests";
+			sourceTree = "<group>";
+		};
+		8983A982261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8983A983261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift */,
+				8983A985261FF9F1007CBFFF /* Info.plist */,
+			);
+			path = "Canada Covid-19 Vaccine TrackerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8983A95D261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8983A988261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine Tracker" */;
+			buildPhases = (
+				8983A95A261FF9EC007CBFFF /* Sources */,
+				8983A95B261FF9EC007CBFFF /* Frameworks */,
+				8983A95C261FF9EC007CBFFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Canada Covid-19 Vaccine Tracker";
+			productName = "Canada Covid-19 Vaccine Tracker";
+			productReference = 8983A95E261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8983A973261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8983A98B261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine TrackerTests" */;
+			buildPhases = (
+				8983A970261FF9F1007CBFFF /* Sources */,
+				8983A971261FF9F1007CBFFF /* Frameworks */,
+				8983A972261FF9F1007CBFFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8983A976261FF9F1007CBFFF /* PBXTargetDependency */,
+			);
+			name = "Canada Covid-19 Vaccine TrackerTests";
+			productName = "Canada Covid-19 Vaccine TrackerTests";
+			productReference = 8983A974261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8983A97E261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8983A98E261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine TrackerUITests" */;
+			buildPhases = (
+				8983A97B261FF9F1007CBFFF /* Sources */,
+				8983A97C261FF9F1007CBFFF /* Frameworks */,
+				8983A97D261FF9F1007CBFFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8983A981261FF9F1007CBFFF /* PBXTargetDependency */,
+			);
+			name = "Canada Covid-19 Vaccine TrackerUITests";
+			productName = "Canada Covid-19 Vaccine TrackerUITests";
+			productReference = 8983A97F261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8983A956261FF9EC007CBFFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8983A95D261FF9EC007CBFFF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					8983A973261FF9F1007CBFFF = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8983A95D261FF9EC007CBFFF;
+					};
+					8983A97E261FF9F1007CBFFF = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8983A95D261FF9EC007CBFFF;
+					};
+				};
+			};
+			buildConfigurationList = 8983A959261FF9EC007CBFFF /* Build configuration list for PBXProject "Canada Covid-19 Vaccine Tracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8983A955261FF9EC007CBFFF;
+			productRefGroup = 8983A95F261FF9EC007CBFFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8983A95D261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */,
+				8983A973261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests */,
+				8983A97E261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8983A95C261FF9EC007CBFFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8983A96E261FF9F0007CBFFF /* LaunchScreen.storyboard in Resources */,
+				8983A96B261FF9F0007CBFFF /* Assets.xcassets in Resources */,
+				8983A969261FF9EC007CBFFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8983A972261FF9F1007CBFFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8983A97D261FF9F1007CBFFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8983A95A261FF9EC007CBFFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8983A966261FF9EC007CBFFF /* ViewController.swift in Sources */,
+				8983A962261FF9EC007CBFFF /* AppDelegate.swift in Sources */,
+				8983A964261FF9EC007CBFFF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8983A970261FF9F1007CBFFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8983A979261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8983A97B261FF9F1007CBFFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8983A984261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8983A976261FF9F1007CBFFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8983A95D261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */;
+			targetProxy = 8983A975261FF9F1007CBFFF /* PBXContainerItemProxy */;
+		};
+		8983A981261FF9F1007CBFFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8983A95D261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */;
+			targetProxy = 8983A980261FF9F1007CBFFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8983A967261FF9EC007CBFFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8983A968261FF9EC007CBFFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8983A96C261FF9F0007CBFFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8983A96D261FF9F0007CBFFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8983A986261FF9F1007CBFFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8983A987261FF9F1007CBFFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8983A989261FF9F1007CBFFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFHB5F748K;
+				INFOPLIST_FILE = "Canada Covid-19 Vaccine Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8983A98A261FF9F1007CBFFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFHB5F748K;
+				INFOPLIST_FILE = "Canada Covid-19 Vaccine Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8983A98C261FF9F1007CBFFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFHB5F748K;
+				INFOPLIST_FILE = "Canada Covid-19 Vaccine TrackerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Canada Covid-19 Vaccine Tracker.app/Canada Covid-19 Vaccine Tracker";
+			};
+			name = Debug;
+		};
+		8983A98D261FF9F1007CBFFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFHB5F748K;
+				INFOPLIST_FILE = "Canada Covid-19 Vaccine TrackerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Canada Covid-19 Vaccine Tracker.app/Canada Covid-19 Vaccine Tracker";
+			};
+			name = Release;
+		};
+		8983A98F261FF9F1007CBFFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFHB5F748K;
+				INFOPLIST_FILE = "Canada Covid-19 Vaccine TrackerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Canada Covid-19 Vaccine Tracker";
+			};
+			name = Debug;
+		};
+		8983A990261FF9F1007CBFFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FFHB5F748K;
+				INFOPLIST_FILE = "Canada Covid-19 Vaccine TrackerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Canada Covid-19 Vaccine Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8983A959261FF9EC007CBFFF /* Build configuration list for PBXProject "Canada Covid-19 Vaccine Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8983A986261FF9F1007CBFFF /* Debug */,
+				8983A987261FF9F1007CBFFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8983A988261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8983A989261FF9F1007CBFFF /* Debug */,
+				8983A98A261FF9F1007CBFFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8983A98B261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8983A98C261FF9F1007CBFFF /* Debug */,
+				8983A98D261FF9F1007CBFFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8983A98E261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8983A98F261FF9F1007CBFFF /* Debug */,
+				8983A990261FF9F1007CBFFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8983A956261FF9EC007CBFFF /* Project object */;
+}
