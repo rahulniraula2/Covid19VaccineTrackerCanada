@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests
+@end

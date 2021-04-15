@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		8983A96E261FF9F0007CBFFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8983A96C261FF9F0007CBFFF /* LaunchScreen.storyboard */; };
 		8983A979261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A978261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift */; };
 		8983A984261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A983261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift */; };
+		8983A995261FFE85007CBFFF /* SummaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A994261FFE85007CBFFF /* SummaryData.swift */; };
+		8983A99A261FFF67007CBFFF /* SummaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A999261FFF67007CBFFF /* SummaryManager.swift */; };
+		9C8E830F3708A28676345EB0 /* Pods_Canada_Covid_19_Vaccine_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478AA2F1472FE910EDD43E0F /* Pods_Canada_Covid_19_Vaccine_Tracker.framework */; };
+		BCF34C31CE98D1CB542661EF /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01323559F879F4C2CDB2791C /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework */; };
+		BEA3C5745A285DF37B5EF2C0 /* Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13455124090FDE03B1A2F3DF /* Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8983A95E261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Covid-19 Vaccine Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01323559F879F4C2CDB2791C /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canada_Covid_19_Vaccine_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05DE6E3E9E48E09AF7FECB92 /* Pods-Canada Covid-19 Vaccine Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine Tracker/Pods-Canada Covid-19 Vaccine Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		13455124090FDE03B1A2F3DF /* Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA143D781FAF91D0A4B51AA /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		46C282C398D695FF05AB7452 /* Pods-Canada Covid-19 Vaccine TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine TrackerTests/Pods-Canada Covid-19 Vaccine TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		478AA2F1472FE910EDD43E0F /* Pods_Canada_Covid_19_Vaccine_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Canada_Covid_19_Vaccine_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A71A3C89170B7655FFF3AC4 /* Pods-Canada Covid-19 Vaccine TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine TrackerTests/Pods-Canada Covid-19 Vaccine TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		89532DCB262219020074EFBE /* Canada Covid-19 Vaccine TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canada Covid-19 Vaccine TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89532DCC262219020074EFBE /* Canada Covid-19 Vaccine TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canada Covid-19 Vaccine TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8983A961261FF9EC007CBFFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8983A963261FF9EC007CBFFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8983A965261FF9EC007CBFFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,12 +56,15 @@
 		8983A96A261FF9F0007CBFFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8983A96D261FF9F0007CBFFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8983A96F261FF9F0007CBFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8983A974261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canada Covid-19 Vaccine TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8983A978261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canada_Covid_19_Vaccine_TrackerTests.swift; sourceTree = "<group>"; };
 		8983A97A261FF9F1007CBFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8983A97F261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Canada Covid-19 Vaccine TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8983A983261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canada_Covid_19_Vaccine_TrackerUITests.swift; sourceTree = "<group>"; };
 		8983A985261FF9F1007CBFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8983A994261FFE85007CBFFF /* SummaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryData.swift; sourceTree = "<group>"; };
+		8983A999261FFF67007CBFFF /* SummaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryManager.swift; sourceTree = "<group>"; };
+		8993E8BB2620F64B0061DE72 /* Canada Covid-19 Vaccine Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Covid-19 Vaccine Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3A68D8E4A7CF7A418F6E15 /* Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine Tracker/Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		ABB0939C150745FE836FF26E /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8E830F3708A28676345EB0 /* Pods_Canada_Covid_19_Vaccine_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF34C31CE98D1CB542661EF /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,35 +88,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA3C5745A285DF37B5EF2C0 /* Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AB8963E7707A3E442256557 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05DE6E3E9E48E09AF7FECB92 /* Pods-Canada Covid-19 Vaccine Tracker.debug.xcconfig */,
+				9D3A68D8E4A7CF7A418F6E15 /* Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig */,
+				2FA143D781FAF91D0A4B51AA /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.debug.xcconfig */,
+				ABB0939C150745FE836FF26E /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig */,
+				46C282C398D695FF05AB7452 /* Pods-Canada Covid-19 Vaccine TrackerTests.debug.xcconfig */,
+				6A71A3C89170B7655FFF3AC4 /* Pods-Canada Covid-19 Vaccine TrackerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8983A955261FF9EC007CBFFF = {
 			isa = PBXGroup;
 			children = (
 				8983A960261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */,
 				8983A977261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests */,
 				8983A982261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests */,
-				8983A95F261FF9EC007CBFFF /* Products */,
+				8993E8BB2620F64B0061DE72 /* Canada Covid-19 Vaccine Tracker.app */,
+				3AB8963E7707A3E442256557 /* Pods */,
+				9F717D58F4E19335D48814AD /* Frameworks */,
+				89532DCB262219020074EFBE /* Canada Covid-19 Vaccine TrackerTests.xctest */,
+				89532DCC262219020074EFBE /* Canada Covid-19 Vaccine TrackerUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		8983A95F261FF9EC007CBFFF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8983A95E261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker.app */,
-				8983A974261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests.xctest */,
-				8983A97F261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8983A960261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				8983A994261FFE85007CBFFF /* SummaryData.swift */,
+				8983A999261FFF67007CBFFF /* SummaryManager.swift */,
 				8983A961261FF9EC007CBFFF /* AppDelegate.swift */,
 				8983A963261FF9EC007CBFFF /* SceneDelegate.swift */,
 				8983A965261FF9EC007CBFFF /* ViewController.swift */,
@@ -128,6 +156,16 @@
 			path = "Canada Covid-19 Vaccine TrackerUITests";
 			sourceTree = "<group>";
 		};
+		9F717D58F4E19335D48814AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				478AA2F1472FE910EDD43E0F /* Pods_Canada_Covid_19_Vaccine_Tracker.framework */,
+				13455124090FDE03B1A2F3DF /* Pods_Canada_Covid_19_Vaccine_Tracker_Canada_Covid_19_Vaccine_TrackerUITests.framework */,
+				01323559F879F4C2CDB2791C /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8983A988261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine Tracker" */;
 			buildPhases = (
+				BAD3CCBBF2F3B307785FDB7F /* [CP] Check Pods Manifest.lock */,
 				8983A95A261FF9EC007CBFFF /* Sources */,
 				8983A95B261FF9EC007CBFFF /* Frameworks */,
 				8983A95C261FF9EC007CBFFF /* Resources */,
+				265DF87EE60AFADABC103B33 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,13 +185,14 @@
 			);
 			name = "Canada Covid-19 Vaccine Tracker";
 			productName = "Canada Covid-19 Vaccine Tracker";
-			productReference = 8983A95E261FF9EC007CBFFF /* Canada Covid-19 Vaccine Tracker.app */;
+			productReference = 8993E8BB2620F64B0061DE72 /* Canada Covid-19 Vaccine Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8983A973261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8983A98B261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine TrackerTests" */;
 			buildPhases = (
+				16465BD6CFEF338C7CCADE54 /* [CP] Check Pods Manifest.lock */,
 				8983A970261FF9F1007CBFFF /* Sources */,
 				8983A971261FF9F1007CBFFF /* Frameworks */,
 				8983A972261FF9F1007CBFFF /* Resources */,
@@ -163,16 +204,18 @@
 			);
 			name = "Canada Covid-19 Vaccine TrackerTests";
 			productName = "Canada Covid-19 Vaccine TrackerTests";
-			productReference = 8983A974261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerTests.xctest */;
+			productReference = 89532DCB262219020074EFBE /* Canada Covid-19 Vaccine TrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8983A97E261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8983A98E261FF9F1007CBFFF /* Build configuration list for PBXNativeTarget "Canada Covid-19 Vaccine TrackerUITests" */;
 			buildPhases = (
+				4D17735451D402F1587D384E /* [CP] Check Pods Manifest.lock */,
 				8983A97B261FF9F1007CBFFF /* Sources */,
 				8983A97C261FF9F1007CBFFF /* Frameworks */,
 				8983A97D261FF9F1007CBFFF /* Resources */,
+				47B62E449AEDA9C4E62C5295 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,7 +224,7 @@
 			);
 			name = "Canada Covid-19 Vaccine TrackerUITests";
 			productName = "Canada Covid-19 Vaccine TrackerUITests";
-			productReference = 8983A97F261FF9F1007CBFFF /* Canada Covid-19 Vaccine TrackerUITests.xctest */;
+			productReference = 89532DCC262219020074EFBE /* Canada Covid-19 Vaccine TrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +258,7 @@
 				Base,
 			);
 			mainGroup = 8983A955261FF9EC007CBFFF;
-			productRefGroup = 8983A95F261FF9EC007CBFFF /* Products */;
+			productRefGroup = 8983A955261FF9EC007CBFFF;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -253,12 +296,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16465BD6CFEF338C7CCADE54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Canada Covid-19 Vaccine TrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		265DF87EE60AFADABC103B33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Canada Covid-19 Vaccine Tracker/Pods-Canada Covid-19 Vaccine Tracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Canada Covid-19 Vaccine Tracker/Pods-Canada Covid-19 Vaccine Tracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Canada Covid-19 Vaccine Tracker/Pods-Canada Covid-19 Vaccine Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47B62E449AEDA9C4E62C5295 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D17735451D402F1587D384E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAD3CCBBF2F3B307785FDB7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Canada Covid-19 Vaccine Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8983A95A261FF9EC007CBFFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8983A995261FFE85007CBFFF /* SummaryData.swift in Sources */,
 				8983A966261FF9EC007CBFFF /* ViewController.swift in Sources */,
+				8983A99A261FFF67007CBFFF /* SummaryManager.swift in Sources */,
 				8983A962261FF9EC007CBFFF /* AppDelegate.swift in Sources */,
 				8983A964261FF9EC007CBFFF /* SceneDelegate.swift in Sources */,
 			);
@@ -433,6 +581,7 @@
 		};
 		8983A989261FF9F1007CBFFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DE6E3E9E48E09AF7FECB92 /* Pods-Canada Covid-19 Vaccine Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -446,12 +595,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8983A98A261FF9F1007CBFFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D3A68D8E4A7CF7A418F6E15 /* Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -465,12 +615,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rahuln-uvic.ca.Canada-Covid-19-Vaccine-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		8983A98C261FF9F1007CBFFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C282C398D695FF05AB7452 /* Pods-Canada Covid-19 Vaccine TrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +644,7 @@
 		};
 		8983A98D261FF9F1007CBFFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A71A3C89170B7655FFF3AC4 /* Pods-Canada Covid-19 Vaccine TrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +667,7 @@
 		};
 		8983A98F261FF9F1007CBFFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA143D781FAF91D0A4B51AA /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +688,7 @@
 		};
 		8983A990261FF9F1007CBFFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB0939C150745FE836FF26E /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

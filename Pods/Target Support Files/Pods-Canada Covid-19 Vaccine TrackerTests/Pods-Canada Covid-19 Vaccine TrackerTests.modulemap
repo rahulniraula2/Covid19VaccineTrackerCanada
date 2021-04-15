@@ -1,0 +1,6 @@
+framework module Pods_Canada_Covid_19_Vaccine_TrackerTests {
+  umbrella header "Pods-Canada Covid-19 Vaccine TrackerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
