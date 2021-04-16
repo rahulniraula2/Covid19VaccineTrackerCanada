@@ -15,7 +15,7 @@ import SwiftUI
 class ViewController: UIViewController, SummaryManagerDelegate{
     
     @IBOutlet weak var movingAverageSwitch: UISwitch!
-   
+    
     @IBOutlet weak var maLabel: UILabel!
     
     @IBOutlet weak var provinceSelector: UIPickerView!
@@ -29,6 +29,8 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     @IBOutlet weak var secondBox: UIView!
     
     @IBOutlet weak var thirdBox: UIView!
+    
+    @IBOutlet var tapCollector: [UIView]!
     
     @IBOutlet weak var fourthBox: UIView!
     
@@ -50,15 +52,23 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     
     var datesData : [String] = []
     
+    var currentVarBar : Float = 0.0
+    var currentDosesBar : Float = 0.0
+    
     let provinces = ["Canada", "BC", "AB", "SK","MB","ON","QC","NB","NS","PE","NL","NU"]
     
     var cur_por : Int = 0
     
+    var one = false
+    
+    var animate = true
+    
     
     @IBAction func switchchanged(_ sender: UISwitch) {
-        print(provinces[cur_por])
         summaryManager.fetchSummary(provinces[cur_por])
     }
+    
+    
     
     lazy var lineChartView : LineChartView = {
         let chartView = LineChartView()
@@ -76,7 +86,7 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         chartView.xAxis.labelTextColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
         chartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         chartView.xAxis.drawGridLinesEnabled = false
-    
+        
         
         chartView.doubleTapToZoomEnabled = false
         chartView.highlightPerTapEnabled = false
@@ -87,24 +97,37 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         chartView.leftAxis.labelTextColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
         chartView.leftAxis.labelFont = .boldSystemFont(ofSize: 12)
         chartView.leftAxis.axisMinimum = 0
-
+        
         return chartView
     }()
+    
+    @IBAction func tap(_ sender: Any) {
+        
+        thirdBox.showAnimation {
+            self.one = !self.one
+            self.animate = false
+            self.summaryManager.fetchSummary(self.provinces[self.cur_por])
+        }
+        
+        
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
         
         movingAverageSwitch.backgroundColor = .white
         
         movingAverageSwitch.layer.cornerRadius = 16.0
         
         initializeGraph()
-
+        
         let boxes = [firstBox, secondBox, thirdBox, fourthBox]
         
         summaryManager.delegate = self
-       
+        
         summaryManager.fetchSummary("Canada")
         lineChartView.delegate = self
         provinceSelector.delegate=self
@@ -118,9 +141,23 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
         graphLabel.showsLargeContentViewer = false
         
+        Timer.scheduledTimer(withTimeInterval: 1.30,repeats: false){ (timer) in
+            
+            self.thirdBox.showAnimation {
+                
+                self.one = !self.one
+                self.animate = false
+                self.summaryManager.fetchSummary(self.provinces[self.cur_por])
+                
+                
+                
+            }
+            
+        }
         
         
-    
+        
+        
     }
     
     func initializeGraph(){
@@ -144,26 +181,48 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
     }
     
+    
+    
     func didUpdateData(_ givenData : SummaryData){
         
         DispatchQueue.main.async {
             
-            let texts = self.summaryManager.getNumbers(givenData, province: self.provinces[Int(self.provinceSelector.selectedRow(inComponent: 0).description)!])
+            let texts = self.summaryManager.getNumbers(givenData, province: self.provinces[Int(self.provinceSelector.selectedRow(inComponent: 0).description)!], one: self.one)
             
             
             self.totalVaccinations.text = texts[0]
             self.dosesDelivered.text = texts[1]
             self.perCapitaVaccinated.text = texts[2]
-            self.dosesBar.progress = Float(texts[3])!
+            self.dosesBar.progress = self.currentDosesBar
             self.dosesText.text = texts[4] + "% delivered doses adminstered"
-            self.perVacBar.progress = Float(texts[5])!/100
+            self.perVacBar.progress = self.currentVarBar
+            
+            let newVarBar = Float(texts[5])!/100
+            let newDosesBar = Float(texts[3])!
+            
+            let increaserVarBar = (newVarBar-self.currentVarBar)/100
+            let increaserDosesBar = (newDosesBar-self.currentDosesBar)/100
+            
+            
+            for a in 0...100{
+                Timer.scheduledTimer(withTimeInterval: 0.005*Double(a),repeats: false){ (timer) in
+                    self.perVacBar.progress += increaserVarBar
+                    self.dosesBar.progress += increaserDosesBar
+                    
+                }
+                
+            }
+            
+            self.currentVarBar = newVarBar
+            self.currentDosesBar = newDosesBar
+            
             
             let moving = self.movingAverageSwitch.isOn
             
             self.lineChartView.data = self.summaryManager.fillGraph(givenData, moving: moving)
             
             self.datesData = []
-                
+            
             self.datesData = self.summaryManager.fillGraphXaxis(givenData)
             
             self.lineChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.datesData)
@@ -173,7 +232,12 @@ class ViewController: UIViewController, SummaryManagerDelegate{
             
             self.graphLabel.text = numberFormatter.string(from: NSNumber(value: Int(givenData.data.last!.changeVaccinations ?? 0)))! + " doses administered today."
             
-            self.animateGraph()
+            if(self.animate){
+                self.animateGraph()
+            }
+            self.animate = true
+            
+            
             
             
         }
@@ -188,8 +252,12 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     
     
     
-     
-
+    
+    
+    
+    
+    
+    
     
 }
 
@@ -226,7 +294,7 @@ extension ViewController: ChartViewDelegate{
 extension ViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       
+        
         
         return provinces[row]
     }
@@ -247,6 +315,28 @@ extension ViewController: UIPickerViewDataSource {
         
     }
     
+}
+
+public extension UIView {
+    func showAnimation(_ completionBlock: @escaping () -> Void) {
+        isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.1,
+                       delay: 0,
+                       options: .curveLinear,
+                       animations: { [weak self] in
+                        self?.transform = CGAffineTransform.init(scaleX: 0.95, y: 0.95)
+                       }) {  (done) in
+            UIView.animate(withDuration: 0.1,
+                           delay: 0,
+                           options: .curveLinear,
+                           animations: { [weak self] in
+                            self?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                           }) { [weak self] (_) in
+                self?.isUserInteractionEnabled = true
+                completionBlock()
+            }
+                       }
+    }
 }
 
 

@@ -65,7 +65,7 @@ struct SummaryManager{
         }
     }
     
-    func getNumbers(_ givenData : SummaryData, province: String) -> [String]{
+    func getNumbers(_ givenData : SummaryData, province: String, one: Bool) -> [String]{
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
@@ -98,9 +98,20 @@ struct SummaryManager{
         let dosesDel = numberFormatter.string(from: NSNumber(value: latestVaccinesDistributed))! + " doses delivered"
         
         
-        let perVac = (Float(latestTotalVaccination - latestTotalVaccinated) / Float(pop_data[province]!))*100
+        var perVac = (Float(latestTotalVaccination - latestTotalVaccinated) / Float(pop_data[province]!))*100
         
-        let oneDos = String(format: "%.2f", perVac ) + "% received atleast one dose"
+        var oneDos = String(format: "%.2f", perVac ) + "% received atleast one dose"
+        
+        
+        
+        if(!one){
+            perVac = (Float(latestTotalVaccinated)/Float(pop_data[province]!))*100
+            
+            oneDos = String(format: "%.2f", perVac ) + "% are fully vaccinated"
+        }
+        
+        print(latestTotalVaccinated)
+        
         
         let barDos = String(Float(latestTotalVaccination)/Float(latestVaccinesDistributed))
         
