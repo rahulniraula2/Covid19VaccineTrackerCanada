@@ -148,9 +148,11 @@ struct SummaryManager{
                 
                 
                 if(i > 6){
+                    
+                let diu = (returnData[i].y + returnData[i-1].y+returnData[i-2].y+returnData[i-3].y+returnData[i-4].y+returnData[i-5].y+returnData[i-6].y)/7.0
                 
                 movingAverage.append(ChartDataEntry(x: returnData[i].x,
-                                                  y: (returnData[i].y + returnData[i-1].y+returnData[i-2].y+returnData[i-3].y+returnData[i-4].y+returnData[i-5].y+returnData[i-6].y)/7.0))
+                                                  y: Double(Int(diu))))
                 }
                 else{
                 movingAverage.append(ChartDataEntry(x: returnData[i].x,
@@ -177,6 +179,7 @@ struct SummaryManager{
         setData.drawFilledEnabled = false
         setData.drawHorizontalHighlightIndicatorEnabled = false
         setData.label = "Doses administered per day"
+        setData.drawVerticalHighlightIndicatorEnabled = true
     
         
         

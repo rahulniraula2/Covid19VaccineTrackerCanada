@@ -79,7 +79,7 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     
         
         chartView.doubleTapToZoomEnabled = false
-        chartView.highlightPerTapEnabled = true
+        chartView.highlightPerTapEnabled = false
         
         chartView.legend.enabled = false
         
@@ -132,13 +132,13 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         lineChartView.layer.zPosition = -1
         
         
-        movingAverageSwitch.bottom(to: stackView2, .none, offset: -7, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+        movingAverageSwitch.bottom(to: stackView2, .none, offset: -15, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
         
-        movingAverageSwitch.rightToSuperview(.none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
+        movingAverageSwitch.right(to: stackView2, .none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
         
-        maLabel.bottom(to: stackView2, .none, offset: -13, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+        maLabel.bottom(to: stackView2, .none, offset: -25, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
         
-        maLabel.rightToSuperview(.none, offset: -60, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
+        maLabel.right(to: stackView2, .none, offset: -70, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
         
         
         
@@ -186,6 +186,8 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
     }
     
+    
+    
      
 
     
@@ -201,6 +203,8 @@ extension ViewController: ChartViewDelegate{
         date = NSMutableString(string: datesData[Int(entry.x)])
         date.insert(" ", at: 3)
         let value = entry.y
+        
+        chartView.highlightPerTapEnabled = true
         
         
         
