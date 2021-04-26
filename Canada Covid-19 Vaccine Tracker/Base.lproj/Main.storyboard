@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,13 +26,13 @@
                                     </label>
                                     <pickerView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTL-Wx-5Bn">
                                         <rect key="frame" x="244" y="-86" width="130" height="216"/>
+                                        <color key="tintColor" red="0.15722152589999999" green="0.17196544999999999" blue="0.20000389220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="2WF-cF-BwR"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstItem="thU-wU-GJH" firstAttribute="centerY" secondItem="5lL-g2-tOe" secondAttribute="centerY" id="HCS-Tq-1hP"/>
                                     <constraint firstItem="hTL-Wx-5Bn" firstAttribute="top" secondItem="5lL-g2-tOe" secondAttribute="top" constant="-86" id="MoM-r4-oOE"/>
@@ -145,6 +144,12 @@
                                                                 </subviews>
                                                                 <gestureRecognizers/>
                                                             </stackView>
+                                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-VF-vzF">
+                                                                <rect key="frame" x="135.5" y="46" width="103.5" height="28"/>
+                                                                <connections>
+                                                                    <action selector="changevalue:" destination="BYZ-38-t0r" eventType="valueChanged" id="SrN-Jw-vNY"/>
+                                                                </connections>
+                                                            </pageControl>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.22255843880000001" green="0.39458692070000001" blue="0.4627557397" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <accessibility key="accessibilityConfiguration">
@@ -153,6 +158,9 @@
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="6eK-Ez-A70" secondAttribute="height" multiplier="350:67" id="7tt-6Q-M1e"/>
+                                                            <constraint firstItem="3Sd-VF-vzF" firstAttribute="top" secondItem="6eK-Ez-A70" secondAttribute="top" constant="46" id="WWu-xw-ZQn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3Sd-VF-vzF" secondAttribute="bottom" constant="-2.5" id="Ybc-ve-6zS"/>
+                                                            <constraint firstItem="3Sd-VF-vzF" firstAttribute="centerX" secondItem="6eK-Ez-A70" secondAttribute="centerX" id="c60-Gm-s04"/>
                                                             <constraint firstItem="Dvy-4o-etQ" firstAttribute="centerY" secondItem="6eK-Ez-A70" secondAttribute="centerY" id="pON-HK-MiO"/>
                                                             <constraint firstItem="Dvy-4o-etQ" firstAttribute="top" secondItem="6eK-Ez-A70" secondAttribute="top" constant="16.666666666666686" id="q1W-ri-Prh"/>
                                                             <constraint firstItem="Dvy-4o-etQ" firstAttribute="centerX" secondItem="6eK-Ez-A70" secondAttribute="centerX" id="yXa-bL-PjE"/>
@@ -191,13 +199,16 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 - day moving average" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWH-Uf-ffi">
-                                                        <rect key="frame" x="153" y="326" width="139.5" height="14.5"/>
+                                                        <rect key="frame" x="153" y="322.5" width="139.5" height="14.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="14.5" id="nMK-dG-nXP"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                         <color key="textColor" red="0.89818888900000005" green="0.89764636750000004" blue="0.9176504016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" title="Moving Average" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="bBB-Je-w5X">
-                                                        <rect key="frame" x="300" y="315" width="51" height="31"/>
+                                                        <rect key="frame" x="300" y="314" width="51" height="31.5"/>
                                                         <color key="onTintColor" red="0.72287732360000001" green="0.87834817170000001" blue="0.87843447919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <connections>
                                                             <action selector="switchchanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wDN-y3-Gml"/>
@@ -206,12 +217,42 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.22255843880000001" green="0.39458692070000001" blue="0.4627557397" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="bBB-Je-w5X" firstAttribute="top" secondItem="JBz-E9-CSp" secondAttribute="top" constant="315" id="10y-rI-yYO"/>
-                                                    <constraint firstItem="bBB-Je-w5X" firstAttribute="leading" secondItem="TWH-Uf-ffi" secondAttribute="trailing" constant="7.3333333333333712" id="159-AJ-ZJR"/>
-                                                    <constraint firstItem="TWH-Uf-ffi" firstAttribute="top" secondItem="JBz-E9-CSp" secondAttribute="top" constant="326" id="CNX-0u-xXh"/>
-                                                    <constraint firstItem="TWH-Uf-ffi" firstAttribute="leading" secondItem="JBz-E9-CSp" secondAttribute="leading" constant="153" id="Od7-Rx-4OB"/>
-                                                    <constraint firstItem="1lR-HU-IVv" firstAttribute="centerX" secondItem="JBz-E9-CSp" secondAttribute="centerX" id="Txr-FE-ygD"/>
+                                                    <constraint firstItem="bBB-Je-w5X" firstAttribute="leading" secondItem="TWH-Uf-ffi" secondAttribute="trailing" constant="7.3333333333333712" placeholder="YES" id="159-AJ-ZJR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bBB-Je-w5X" secondAttribute="trailing" constant="25" placeholder="YES" id="E9k-4u-qvm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="TWH-Uf-ffi" secondAttribute="bottom" constant="10.5" placeholder="YES" id="MDa-XJ-ac1"/>
+                                                    <constraint firstItem="TWH-Uf-ffi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JBz-E9-CSp" secondAttribute="leading" constant="20" symbolic="YES" id="Q9g-t0-OY2"/>
+                                                    <constraint firstItem="TWH-Uf-ffi" firstAttribute="centerY" secondItem="bBB-Je-w5X" secondAttribute="centerY" placeholder="YES" id="SJq-f3-Vz4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bBB-Je-w5X" secondAttribute="bottom" constant="2" placeholder="YES" id="bZ0-YX-KOE"/>
+                                                    <constraint firstItem="1lR-HU-IVv" firstAttribute="centerX" secondItem="JBz-E9-CSp" secondAttribute="centerX" id="qmn-HE-XPB"/>
                                                     <constraint firstItem="1lR-HU-IVv" firstAttribute="top" secondItem="JBz-E9-CSp" secondAttribute="top" constant="5" id="ya3-kN-2iO"/>
+                                                </constraints>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh7-oj-aug">
+                                                <rect key="frame" x="100" y="668" width="174" height="33.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bEx-Wq-6Y0">
+                                                        <rect key="frame" x="-74.5" y="16.5" width="323.5" height="0.0"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccinating at the average pace of past " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-BR-KZz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="323.5" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" red="0.96468394989999995" green="0.96077483890000004" blue="0.96078485250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <gestureRecognizers/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.22255843880000001" green="0.39458692070000001" blue="0.4627557397" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                </accessibility>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstItem="bEx-Wq-6Y0" firstAttribute="centerX" secondItem="eh7-oj-aug" secondAttribute="centerX" id="3vj-CY-Vgh"/>
+                                                    <constraint firstItem="bEx-Wq-6Y0" firstAttribute="centerY" secondItem="eh7-oj-aug" secondAttribute="centerY" id="RtT-DY-Pbu"/>
+                                                    <constraint firstAttribute="width" secondItem="eh7-oj-aug" secondAttribute="height" multiplier="350:67" id="qEv-rR-OEH"/>
+                                                    <constraint firstItem="bEx-Wq-6Y0" firstAttribute="top" secondItem="eh7-oj-aug" secondAttribute="top" constant="16.666666666666686" id="uGH-gV-PpC"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -231,7 +272,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" red="0.89043444400000005" green="0.90156185629999996" blue="0.92157202959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5lL-g2-tOe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="25F-6G-AIX"/>
                             <constraint firstItem="C7t-f2-wR4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3kl-Dy-YXy"/>
@@ -253,9 +294,11 @@
                         <outlet property="graphLabel" destination="1lR-HU-IVv" id="bUb-X8-sbn"/>
                         <outlet property="maLabel" destination="TWH-Uf-ffi" id="LZT-vF-axv"/>
                         <outlet property="movingAverageSwitch" destination="bBB-Je-w5X" id="Rrs-j4-Zjg"/>
+                        <outlet property="pageControl" destination="3Sd-VF-vzF" id="k88-s4-LoV"/>
                         <outlet property="perCapitaVaccinated" destination="f3c-4j-Rps" id="a0U-Q0-faU"/>
                         <outlet property="perVacBar" destination="yTk-Tn-h49" id="mle-hr-mrF"/>
                         <outlet property="provinceSelector" destination="hTL-Wx-5Bn" id="712-7P-OJe"/>
+                        <outlet property="scrollView" destination="C7t-f2-wR4" id="ETb-xo-PgF"/>
                         <outlet property="secondBox" destination="rdz-t7-LMb" id="hXq-N1-SAL"/>
                         <outlet property="stackView2" destination="JBz-E9-CSp" id="Lxz-T0-426"/>
                         <outlet property="thirdBox" destination="6eK-Ez-A70" id="1cl-a0-qFt"/>
@@ -272,9 +315,4 @@
             <point key="canvasLocation" x="-213.84615384615384" y="26.303317535545023"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

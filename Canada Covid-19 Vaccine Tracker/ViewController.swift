@@ -48,6 +48,12 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     
     @IBOutlet weak var stackView2: UIView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+
+    
     var summaryManager = SummaryManager()
     
     var datesData : [String] = []
@@ -63,11 +69,17 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     
     var animate = true
     
+    var refreshControl = UIRefreshControl()
+    
+    var texts = ["","","",""]
+    
+    @IBAction func changevalue(_ sender: UIPageControl) {
+        tap(sender)
+    }
     
     @IBAction func switchchanged(_ sender: UISwitch) {
         summaryManager.fetchSummary(provinces[cur_por])
     }
-    
     
     
     lazy var lineChartView : LineChartView = {
@@ -104,9 +116,62 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     @IBAction func tap(_ sender: Any) {
         
         thirdBox.showAnimation {
+            
+       
+            
+            if(self.one){
+                self.pageControl.currentPage = 0
+                self.perCapitaVaccinated.text = self.texts[0]
+                
+                let newVarBar = Float(self.texts[2])!
+                
+                
+                
+                let increaserVarBar = (newVarBar-self.currentVarBar)/100
+              
+                
+                
+                for a in 0...100{
+                    Timer.scheduledTimer(withTimeInterval: 0.005*Double(a),repeats: false){ (timer) in
+                        self.perVacBar.progress += increaserVarBar
+                       
+                        
+                    }
+                    
+                }
+                
+                
+                
+                self.currentVarBar = newVarBar
+               
+                
+                
+            }else{
+                self.pageControl.currentPage = 1
+                self.perCapitaVaccinated.text = self.texts[1]
+                
+                let newVarBar = Float(self.texts[3])!
+                
+                
+                
+                let increaserVarBar = (newVarBar-self.currentVarBar)/100
+              
+                
+                
+                for a in 0...100{
+                    Timer.scheduledTimer(withTimeInterval: 0.005*Double(a),repeats: false){ (timer) in
+                        self.perVacBar.progress += increaserVarBar
+                       
+                        
+                    }
+                    
+                }
+                
+                self.currentVarBar = newVarBar
+            }
+            
+            print(self.currentVarBar)
             self.one = !self.one
-            self.animate = false
-            self.summaryManager.fetchSummary(self.provinces[self.cur_por])
         }
         
         
@@ -116,13 +181,14 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
         super.viewDidLoad()
         
-        
+        overrideUserInterfaceStyle = .light
         
         movingAverageSwitch.backgroundColor = .white
         
         movingAverageSwitch.layer.cornerRadius = 16.0
         
         initializeGraph()
+        
         
         let boxes = [firstBox, secondBox, thirdBox, fourthBox]
         
@@ -141,41 +207,70 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
         graphLabel.showsLargeContentViewer = false
         
-        Timer.scheduledTimer(withTimeInterval: 1.30,repeats: false){ (timer) in
-            
-            self.thirdBox.showAnimation {
-                
-                self.one = !self.one
-                self.animate = false
-                self.summaryManager.fetchSummary(self.provinces[self.cur_por])
-                
-                
-                
-            }
-            
-        }
+//        Timer.scheduledTimer(withTimeInterval: 1.30,repeats: false){ (timer) in
+//
+//            self.thirdBox.showAnimation {
+//
+//                self.one = !self.one
+//                self.animate = false
+//                self.summaryManager.fetchSummary(self.provinces[self.cur_por])
+//
+//
+//
+//            }
+//
+//        }
+        
+        self.refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
+        self.scrollView.isScrollEnabled = true
+        self.scrollView.alwaysBounceVertical = true
+        self.scrollView.showsVerticalScrollIndicator = false
+        scrollView.addSubview(refreshControl)
         
         
         
         
     }
     
+    @objc func refresh(sender:AnyObject) {
+            // Code to refresh table view
+        summaryManager.fetchSummary(provinces[cur_por])
+
+        }
+    
     func initializeGraph(){
         
         stackView2.addSubview(lineChartView)
-        lineChartView.bottomToSuperview(.none, offset: -50, relation: .equalOrGreater, priority: .defaultLow, isActive: true, usingSafeArea: true)
+        lineChartView.bottomToSuperview(.none, offset: -45, relation: .equalOrGreater, priority: .defaultLow, isActive: true, usingSafeArea: true)
         lineChartView.width(to: stackView2)
         lineChartView.height(to: stackView2, .none, multiplier: 1, offset: -65, relation: .equal, priority: .defaultHigh, isActive: true)
         lineChartView.layer.zPosition = -1
         
         
-        movingAverageSwitch.bottom(to: stackView2, .none, offset: -15, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+//        movingAverageSwitch.bottom(to: stackView2, .none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+//
+//        movingAverageSwitch.right(to: stackView2, .none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+//
+//        maLabel.bottom(to: stackView2, .none, offset: -25, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+//
+//        maLabel.right(to: stackView2, .none, offset: -70, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
         
-        movingAverageSwitch.right(to: stackView2, .none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+        movingAverageSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         
-        maLabel.bottom(to: stackView2, .none, offset: -25, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+        movingAverageSwitch.bottomToSuperview(.none, offset: -13, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
+        movingAverageSwitch.rightToSuperview(.none, offset: -11, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
         
-        maLabel.right(to: stackView2, .none, offset: -70, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
+        maLabel.bottomToSuperview(.none, offset: -20, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
+        
+       maLabel.rightToSuperview(.none, offset: -60, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
+        
+        
+        
+        
+        
+        
+    
+        
         
         
         
@@ -191,14 +286,31 @@ class ViewController: UIViewController, SummaryManagerDelegate{
             
             
             self.totalVaccinations.text = texts[0]
+            
+            
             self.dosesDelivered.text = texts[1]
-            self.perCapitaVaccinated.text = texts[2]
+            
+            self.texts[0] = texts[2]
+            self.texts[1] = texts[6]
+            
+            var newVarBar = Float(texts[5])!/100
+            
+            if(self.one){
+                self.perCapitaVaccinated.text = self.texts[1]
+                newVarBar = Float(texts[7])!
+            }else{
+                self.perCapitaVaccinated.text = self.texts[0]
+                newVarBar = Float(texts[5])!/100
+            }
             self.dosesBar.progress = self.currentDosesBar
             self.dosesText.text = texts[4] + "% delivered doses adminstered"
             self.perVacBar.progress = self.currentVarBar
             
-            let newVarBar = Float(texts[5])!/100
+            
             let newDosesBar = Float(texts[3])!
+            
+            self.texts[2] = String(Float(texts[5])!/100)
+            self.texts[3] = texts[7]
             
             let increaserVarBar = (newVarBar-self.currentVarBar)/100
             let increaserDosesBar = (newDosesBar-self.currentDosesBar)/100
@@ -236,6 +348,8 @@ class ViewController: UIViewController, SummaryManagerDelegate{
                 self.animateGraph()
             }
             self.animate = true
+            
+            self.refreshControl.endRefreshing()
             
             
             
@@ -338,6 +452,9 @@ public extension UIView {
                        }
     }
 }
+
+
+
 
 
 

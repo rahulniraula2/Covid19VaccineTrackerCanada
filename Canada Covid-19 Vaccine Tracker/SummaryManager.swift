@@ -98,17 +98,19 @@ struct SummaryManager{
         let dosesDel = numberFormatter.string(from: NSNumber(value: latestVaccinesDistributed))! + " doses delivered"
         
         
-        var perVac = (Float(latestTotalVaccination - latestTotalVaccinated) / Float(pop_data[province]!))*100
+        let perVac = (Float(latestTotalVaccination - latestTotalVaccinated) / Float(pop_data[province]!))*100
         
-        var oneDos = String(format: "%.2f", perVac ) + "% received atleast one dose"
+        let oneDos = String(format: "%.2f", perVac ) + "% received atleast one dose"
         
         
         
-        if(!one){
-            perVac = (Float(latestTotalVaccinated)/Float(pop_data[province]!))*100
+        
+        let perVac2Dos = (Float(latestTotalVaccinated)/Float(pop_data[province]!))
+        
+        print(perVac2Dos)
             
-            oneDos = String(format: "%.2f", perVac ) + "% are fully vaccinated"
-        }
+        let twoDos = String(format: "%.2f", perVac2Dos*100 ) + "% are fully vaccinated"
+        
         
         print(latestTotalVaccinated)
         
@@ -118,10 +120,11 @@ struct SummaryManager{
         let perDos = String(format: "%.2f", Float(barDos)!*100)
         
         let perVAc = String(perVac)
+        let perVAc2Dos = String(perVac2Dos)
         
         
         
-        return [dosesAdm, dosesDel, oneDos, barDos, perDos, perVAc]
+        return [dosesAdm, dosesDel, oneDos, barDos, perDos, perVAc, twoDos, perVAc2Dos]
     }
     
     func fillGraph(_ givenData: SummaryData, moving: Bool) -> LineChartData {
