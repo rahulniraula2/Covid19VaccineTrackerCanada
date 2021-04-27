@@ -9,6 +9,7 @@ import UIKit
 import Charts
 import TinyConstraints
 import SwiftUI
+import SystemConfiguration
 
 
 
@@ -73,6 +74,8 @@ class ViewController: UIViewController, SummaryManagerDelegate{
     
     var texts = ["","","",""]
     
+    var dosesToday = ""
+    
     @IBAction func changevalue(_ sender: UIPageControl) {
         tap(sender)
     }
@@ -100,8 +103,11 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         chartView.xAxis.drawGridLinesEnabled = false
         
         
+        
+        
         chartView.doubleTapToZoomEnabled = false
-        chartView.highlightPerTapEnabled = false
+        
+        chartView.highlightPerTapEnabled = true
         
         chartView.legend.enabled = false
         
@@ -177,9 +183,47 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
     }
     
+    func isInternetAvailable() -> Bool {
+            var zeroAddress = sockaddr_in()
+            zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+            zeroAddress.sin_family = sa_family_t(AF_INET)
+            
+            let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+                $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                    SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+                }
+            }
+            
+            var flags = SCNetworkReachabilityFlags()
+            if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+                return false
+            }
+            let isReachable = flags.contains(.reachable)
+            let needsConnection = flags.contains(.connectionRequired)
+            return (isReachable && !needsConnection)
+        }
+
+        func showAlert() {
+            if !isInternetAvailable() {
+                let alert = UIAlertController(title: "Warning", message: "The Internet is not available", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+            }
+        }
+    
+  
+    
+ 
+    
     override func viewDidLoad() {
         
+       // showAlert()
+        
         super.viewDidLoad()
+        
+       
+        
         
         overrideUserInterfaceStyle = .light
         
@@ -207,20 +251,6 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
         graphLabel.showsLargeContentViewer = false
         
-//        Timer.scheduledTimer(withTimeInterval: 1.30,repeats: false){ (timer) in
-//
-//            self.thirdBox.showAnimation {
-//
-//                self.one = !self.one
-//                self.animate = false
-//                self.summaryManager.fetchSummary(self.provinces[self.cur_por])
-//
-//
-//
-//            }
-//
-//        }
-        
         self.refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
         self.scrollView.isScrollEnabled = true
         self.scrollView.alwaysBounceVertical = true
@@ -232,28 +262,21 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        showAlert()
+        super.viewDidAppear(animated)
+    }
+    
     @objc func refresh(sender:AnyObject) {
-            // Code to refresh table view
         summaryManager.fetchSummary(provinces[cur_por])
-
         }
     
     func initializeGraph(){
-        
         stackView2.addSubview(lineChartView)
         lineChartView.bottomToSuperview(.none, offset: -45, relation: .equalOrGreater, priority: .defaultLow, isActive: true, usingSafeArea: true)
         lineChartView.width(to: stackView2)
         lineChartView.height(to: stackView2, .none, multiplier: 1, offset: -65, relation: .equal, priority: .defaultHigh, isActive: true)
         lineChartView.layer.zPosition = -1
-        
-        
-//        movingAverageSwitch.bottom(to: stackView2, .none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
-//
-//        movingAverageSwitch.right(to: stackView2, .none, offset: -10, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
-//
-//        maLabel.bottom(to: stackView2, .none, offset: -25, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
-//
-//        maLabel.right(to: stackView2, .none, offset: -70, relation: .equalOrGreater, priority: .defaultHigh, isActive: true)
         
         movingAverageSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         
@@ -263,24 +286,16 @@ class ViewController: UIViewController, SummaryManagerDelegate{
         maLabel.bottomToSuperview(.none, offset: -20, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
         
        maLabel.rightToSuperview(.none, offset: -60, relation: .equalOrGreater, priority: .defaultHigh, isActive: true, usingSafeArea: true)
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
+         
     }
     
     
     
     func didUpdateData(_ givenData : SummaryData){
         
-        DispatchQueue.main.async {
+        lineChartView.data?.highlightEnabled = false
+        
+        DispatchQueue.main.async { [self] in
             
             let texts = self.summaryManager.getNumbers(givenData, province: self.provinces[Int(self.provinceSelector.selectedRow(inComponent: 0).description)!], one: self.one)
             
@@ -342,7 +357,8 @@ class ViewController: UIViewController, SummaryManagerDelegate{
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
             
-            self.graphLabel.text = numberFormatter.string(from: NSNumber(value: Int(givenData.data.last!.changeVaccinations ?? 0)))! + " doses administered today."
+            self.dosesToday = numberFormatter.string(from: NSNumber(value: Int(givenData.data.last!.changeVaccinations ?? 0)))! + " doses administered today."
+            self.graphLabel.text = self.dosesToday
             
             if(self.animate){
                 self.animateGraph()
@@ -355,22 +371,13 @@ class ViewController: UIViewController, SummaryManagerDelegate{
             
             
         }
+        
+        
     }
-    
     
     func animateGraph(){
-        
         self.lineChartView.animate(xAxisDuration: 1)
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }
@@ -381,14 +388,18 @@ extension ViewController: ChartViewDelegate{
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         
+ 
+        
         let date : NSMutableString
         date = NSMutableString(string: datesData[Int(entry.x)])
         date.insert(" ", at: 3)
         let value = entry.y
         
-        chartView.highlightPerTapEnabled = true
+        let marker = CircleMarker(color: UIColor(red: 0.63, green: 0.91, blue: 0.99, alpha: 0.9))
+        chartView.marker = marker
         
-        
+        chartView.highlightValues([highlight])
+    
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
@@ -400,6 +411,18 @@ extension ViewController: ChartViewDelegate{
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
         graphLabel.text = "Doses administered per day"
+    }
+    
+    func chartViewDidEndPanning(_ chartView: ChartViewBase){
+        self.scrollView.isScrollEnabled = true
+        self.scrollView.alwaysBounceVertical = true
+        chartView.highlightValues(nil)
+        graphLabel.text = dosesToday
+    }
+    
+    func chartViewDidStartPanning(_ chartView: ChartViewBase){
+        self.scrollView.isScrollEnabled = false
+        self.scrollView.alwaysBounceVertical = false
     }
     
 }
@@ -452,6 +475,8 @@ public extension UIView {
                        }
     }
 }
+
+
 
 
 

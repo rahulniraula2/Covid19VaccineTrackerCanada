@@ -17,6 +17,7 @@
 		8983A984261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A983261FF9F1007CBFFF /* Canada_Covid_19_Vaccine_TrackerUITests.swift */; };
 		8983A995261FFE85007CBFFF /* SummaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A994261FFE85007CBFFF /* SummaryData.swift */; };
 		8983A99A261FFF67007CBFFF /* SummaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8983A999261FFF67007CBFFF /* SummaryManager.swift */; };
+		89BF1C9826378F1300676233 /* CircleMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BF1C9726378F1300676233 /* CircleMarker.swift */; };
 		89F78AFB262913D100CDCE8B /* hjbjbjb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89F78AFA262913D000CDCE8B /* hjbjbjb.storyboard */; };
 		9C8E830F3708A28676345EB0 /* Pods_Canada_Covid_19_Vaccine_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478AA2F1472FE910EDD43E0F /* Pods_Canada_Covid_19_Vaccine_Tracker.framework */; };
 		BCF34C31CE98D1CB542661EF /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01323559F879F4C2CDB2791C /* Pods_Canada_Covid_19_Vaccine_TrackerTests.framework */; };
@@ -64,6 +65,7 @@
 		8983A994261FFE85007CBFFF /* SummaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryData.swift; sourceTree = "<group>"; };
 		8983A999261FFF67007CBFFF /* SummaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryManager.swift; sourceTree = "<group>"; };
 		8993E8BB2620F64B0061DE72 /* Canada Covid-19 Vaccine Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Covid-19 Vaccine Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BF1C9726378F1300676233 /* CircleMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMarker.swift; sourceTree = "<group>"; };
 		89F78AFA262913D000CDCE8B /* hjbjbjb.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = hjbjbjb.storyboard; path = ../../../Desktop/hjbjbjb.storyboard; sourceTree = "<group>"; };
 		9D3A68D8E4A7CF7A418F6E15 /* Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine Tracker/Pods-Canada Covid-19 Vaccine Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		ABB0939C150745FE836FF26E /* Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests/Pods-Canada Covid-19 Vaccine Tracker-Canada Covid-19 Vaccine TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				8983A96A261FF9F0007CBFFF /* Assets.xcassets */,
 				8983A96C261FF9F0007CBFFF /* LaunchScreen.storyboard */,
 				8983A96F261FF9F0007CBFFF /* Info.plist */,
+				89BF1C9726378F1300676233 /* CircleMarker.swift */,
 			);
 			path = "Canada Covid-19 Vaccine Tracker";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				8983A99A261FFF67007CBFFF /* SummaryManager.swift in Sources */,
 				8983A962261FF9EC007CBFFF /* AppDelegate.swift in Sources */,
 				8983A964261FF9EC007CBFFF /* SceneDelegate.swift in Sources */,
+				89BF1C9826378F1300676233 /* CircleMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

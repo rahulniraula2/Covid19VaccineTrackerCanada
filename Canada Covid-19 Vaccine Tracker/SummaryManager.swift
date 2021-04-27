@@ -182,9 +182,11 @@ struct SummaryManager{
             setData = LineChartDataSet(entries: returnData)
         }
         
-        //setData.drawCircleHoleEnabled = false
+      
         setData.drawCirclesEnabled = false
+        
         setData.highlightEnabled = true
+        
         setData.mode = .cubicBezier
         setData.drawValuesEnabled = false
         setData.lineWidth = 2

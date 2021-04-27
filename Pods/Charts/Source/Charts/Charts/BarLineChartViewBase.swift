@@ -556,6 +556,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 highlightValue(h, callDelegate: true)
             }
         }
+        
     }
     
     @objc private func doubleTapGestureRecognized(_ recognizer: NSUITapGestureRecognizer)
@@ -685,6 +686,8 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     {
         if recognizer.state == NSUIGestureRecognizerState.began && recognizer.nsuiNumberOfTouches() > 0
         {
+            delegate?.chartViewDidStartPanning?(self)
+            
             stopDeceleration()
             
             if _data === nil || !self.isDragEnabled
@@ -772,10 +775,13 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                     self.lastHighlighted = h
                     self.highlightValue(h, callDelegate: true)
                 }
+                
             }
         }
         else if recognizer.state == NSUIGestureRecognizerState.ended || recognizer.state == NSUIGestureRecognizerState.cancelled
         {
+            delegate?.chartViewDidEndPanning?(self)
+            
             if _isDragging
             {
                 if recognizer.state == NSUIGestureRecognizerState.ended && isDragDecelerationEnabled
